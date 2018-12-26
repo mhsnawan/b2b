@@ -29,9 +29,9 @@
       "BUTTON": "ADD"
     },
     "VIEW": {
-      "HEAD": "View Categories",
+      "HEAD": "View Sub Categories",
       "SNO": "S.no",
-      "CATEGORY": "Category Name"
+      "CATEGORY": "Sub Category Name"
     }
   },
   "sidebar": {

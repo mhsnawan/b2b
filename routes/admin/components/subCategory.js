@@ -70,7 +70,7 @@ router.get('/view', function(req, res, next) {
       db.collection("sites").find({}).toArray((err, site) => {
         try {
           res.render('admin/index', {
-            title: site[0].title+' - Admin Category',
+            title: site[0].title+' - Admin Sub Category',
             logo: site[0].image,
             show: 'viewSubCategory',
             category: result,
@@ -78,7 +78,7 @@ router.get('/view', function(req, res, next) {
           });
         }catch(err) {
           res.render('admin/index', {
-            title: 'Blog - Admin Category',
+            title: 'Blog - Admin Sub Category',
             logo: 'vFR1Q.png',
             show: 'viewSubCategory',
             category: result,
@@ -105,11 +105,11 @@ router.get('/delete', function(req, res, next) {
   });
 });
 
-const saveCategory = (db, parentId, subCategory, callback) => {
+const saveCategory = (db, parentId, name, callback) => {
   const collection = db.collection('subcategories');
   collection.insertOne({
     parentId,
-    subCategory,
+    name,
     created_date: new Date()
   }, (err, result) => {
     callback(result);
