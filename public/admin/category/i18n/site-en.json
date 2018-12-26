@@ -21,6 +21,19 @@
       "CATEGORY": "Category Name"
     }
   },
+  "subcategory": {
+    "TITLE": "Add Sub Category Name",
+    "FORM": {
+      "PARENT-CATEGORY-NAME": "Parent Category Name",
+      "SUBCATEGORY": "Sub Category Name",
+      "BUTTON": "ADD"
+    },
+    "VIEW": {
+      "HEAD": "View Categories",
+      "SNO": "S.no",
+      "CATEGORY": "Category Name"
+    }
+  },
   "sidebar": {
     "heading": {
       "HEADER": "Main Navigation"

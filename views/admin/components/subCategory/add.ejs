@@ -2,7 +2,7 @@
   <div class="content-wrapper">
     <div class="content-heading">
       <%- include('../../includes/language.ejs') -%>
-      <span data-localize="category.TITLE">Add New Category</span>
+      <span data-localize="subcategory.TITLE">Add New Sub Category</span>
     </div>
     <div class="row">
       <div class="col-sm-12">
@@ -11,16 +11,16 @@
             <form role="form" id="subCategoryForm">
               <div class="form-group">
                 <label>Parent Category</label>
-                <select name="parentCategory" id="parentCategory">
+                <select name="parentCategory" id="parentCategory" class="form-control">
                   <% category.forEach(function(data, key) {%>
-                    <option><%= data.name%></option>
-                  <%})%>
+                  <option value="<%= data._id%>"><%= data.name%></option>  
+                  <% });%>
                 </select>
 
               </div>
               <div class="form-group">
                 <label>Sub Category Names</label>
-                <input type="text" placeholder="Sub Category Name" id="categoryName" class="form-control">
+                <input type="text" placeholder="Sub Category Name" id="subCategory" class="form-control">
               </div>
               <button type="submit" class="btn btn-sm btn-info">Submit</button>
             </form>

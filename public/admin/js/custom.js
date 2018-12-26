@@ -30,6 +30,37 @@ $(function() {
     });
   });
 
+    //Add New Category
+    $('#subCategoryForm').submit(function(event) {
+      event.preventDefault();
+      var parentcategoryid = $('#parentCategory').val().trim();
+      var subCategory = $('#subCategory').val().trim();
+  
+      if (!parentcategoryid && !subCategory) {
+        swal('Oops!', "Parent Category name is required or Sub Category", "error");
+        return;
+      }
+      var data = {};
+      data.parentcategoryid = parentcategoryid;
+      data.subCategory = subCategory;
+      $.ajax({
+        method: 'POST',
+        url: '/admin/subcategory/add',
+        data: JSON.stringify(data),
+        contentType: 'application/json',
+        success: function(response) {
+          let message = response.message;
+          if (response.success) {
+            swal('Success!', message, 'success');
+            $('#parentcategoryid').empty();
+            $('#subCategory').val('');
+          } else {
+            swal('Oops!', message, 'error');
+          }
+        }
+      });
+    });
+
   //Add New Admin
   $('#adminForm').submit(function(event) {
       event.preventDefault();
