@@ -1,0 +1,32 @@
+<section>
+  <div class="content-wrapper">
+    <div class="content-heading">
+      <%- include('../../includes/language.ejs') -%>
+      <span data-localize="category.TITLE">Add New Category</span>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <form role="form" id="subCategoryForm">
+              <div class="form-group">
+                <label>Parent Category</label>
+                <select name="parentCategory" id="parentCategory">
+                  <% category.forEach(function(data, key) {%>
+                    <option><%= data.name%></option>
+                  <%})%>
+                </select>
+
+              </div>
+              <div class="form-group">
+                <label>Sub Category Names</label>
+                <input type="text" placeholder="Sub Category Name" id="categoryName" class="form-control">
+              </div>
+              <button type="submit" class="btn btn-sm btn-info">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
