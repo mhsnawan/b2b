@@ -51,6 +51,7 @@ router.post('/create', function(req, res, next) {
   var minBatch = req.body.minBatch;
   var maxBatch = req.body.maxBatch;
   var unit = req.body.unit;
+  var tags = req.body.tags;
   var category = req.body.category;
   var description = req.body.description;
 
@@ -67,6 +68,7 @@ router.post('/create', function(req, res, next) {
       maxBatch,
       unit,
       category,
+      tags,
       description,
       userId: req.session.userId,
       updated_date: "",

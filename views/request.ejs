@@ -1,30 +1,47 @@
 <div class="main_content">
   <div class="searching_container viewform_container">
-      <div>
-        <ul class="custom_breadcrumb">
-          <li>
-            <a href="/" class="nav-home">
-              <span>Home</span>
-              <i class="icon icon_separator"></i>
-            </a>
-          </li>
-          <li>
-            <a href="/profile">
-              <span>Profile</span>
-              <i class="icon icon_separator"></i>
-            </a>
-          </li>
-          <li class="active">
-            <span id="edit_request_label">Add a request</span>
-          </li>
-        </ul>
+    <div>
+      <ul class="custom_breadcrumb">
+        <li>
+          <a href="/" class="nav-home">
+            <span>Home</span>
+            <i class="icon icon_separator"></i>
+          </a>
+        </li>
+        <li>
+          <a href="/profile">
+            <span>Profile</span>
+            <i class="icon icon_separator"></i>
+          </a>
+        </li>
+        <li class="active">
+          <span id="edit_request_label">Add a request</span>
+        </li>
+      </ul>
+    </div>
+    <div class="stepwizard col-md-offset-3">
+      <div class="stepwizard-row setup-panel">
+        <div class="stepwizard-step">
+          <a href="#step-1" type="button" class="btn btn-primary btn-circle">1</a>
+          <p>Main Information</p>
+        </div>
+        <div class="stepwizard-step">
+          <a href="#step-2" type="button" class="btn btn-default btn-circle" disabled="disabled">2</a>
+          <p>Category and hashtags</p>
+        </div>
       </div>
-      <div class="row" style="margin: 29px 15px 0px 15px">
-        <form action="/request/create" method="post">
+    </div>
+  
+    <form action="/request/create" method="post">
+      <div class="row setup-content" id="step-1">
+        <div class="col-xs-6 col-md-offset-3">
+          <div class="col-md-12">
+            <!-- <h3> Main Information</h3> -->
+            <div class="row" style="margin: 29px 15px 0px 15px">
         <div class="searching-lg-12 searching-md-12 searching-sm-12 searching-xs-12" style="border-left: solid 1px #e6ebed;">
           <div class="viewform_right">
             <section id="viewform_1">
-              <h1 id="request_info_label">Request information</h1>
+              <h1>Main Information</h1>
               <div class="viewform_title" style="margin-top: 30px;"><img src="img/viewform/about.svg" alt=""><span id="request_description_label">Tell us about your request</span></div>
               <div class="row">
                 <div class="searching-lg-12 searching-md-12 searching-sm-12 searching-xs-12">
@@ -32,17 +49,17 @@
                   <div class="viewform_name">
                     <div class="form-group field-workrequestlanguagetranslate-title required">
                       <label class="control-label" for="workrequestlanguagetranslate-title" id="reqest_name_label">Request name</label>
-                      <textarea id="workrequestlanguagetranslate-title" class="viewform_name_area" name="title" rows="1" placeholder="I am searching for... Recommended number of characters - not more than 120" aria-required="true"></textarea>
+                      <textarea id="workrequestlanguagetranslate-title" class="viewform_name_area" name="title" rows="1" placeholder="I am searching for... Recommended number of characters - not more than 120" aria-required="true" required></textarea>
                       <div class="help-block"></div>
                     </div>
                   </div>
                   <div class="row">
                     <div class="searching-lg-8 searching-md-8 searching-sm-8 searching-xs-8 viewform_price_form_1">
                       <label for="#" id="price_label">Price</label>
-                      <input type="number" id="service-price" name="price" placeholder="300"> </div>
+                      <input type="number" id="service-price" name="price" placeholder="300" required> </div>
                     <div class="searching-lg-4 searching-md-4 searching-sm-4 searching-xs-4 viewform_price_form_1">
                       <label for="#" id="currency_label">Currency</label>
-                      <select class="form-control" name="currency">
+                      <select class="form-control" name="currency"  required>
                         <option value="Dollars">Dollars</option>
                         <option value="Rubles">Rubles</option>
                         <option value="Baht">Baht</option>
@@ -58,7 +75,7 @@
                     <label for="ccwidget_country_5ba222a6c27a4" class="reglogin_input_label" id="country_label">Country</label>
                     <div class="input_wrap">
                       <div class="form-group field-registrationform-first_name required">
-                        <input type="text" id="offerCountry" name="country" placeholder="Country name" style="color: #000">
+                        <input type="text" id="offerCountry" name="country" placeholder="Country name" style="color: #000"  required>
                         <p class="help-block help-block-error"></p>
                       </div>
                     </div>
@@ -67,7 +84,7 @@
                     <label for="ccwidget_city_5ba222a6c27a4" class="reglogin_input_label" id="city_label">City</label>
                     <div class="input_wrap">
                       <div class="form-group field-registrationform-first_name required">
-                        <input type="text" id="offerCity" class="pass reglogin_password" name="city" placeholder="City name" style="color: #000">
+                        <input type="text" id="offerCity" class="pass reglogin_password" name="city" placeholder="City name" style="color: #000" required>
                         <p class="help-block help-block-error"></p>
                       </div>
                     </div>
@@ -79,12 +96,12 @@
                 <div class="row">
                   <div class="searching-lg-3 searching-md-3 searching-sm-4 searching-xs-6">
                     <div class="viewform_title_label" id="min_batch_label"> Minimum batch</div>
-                    <input type="number" id="workrequest-minbatch" name="minBatch" placeholder="from"> </div>
+                    <input type="number" id="workrequest-minbatch" name="minBatch" placeholder="from" required> </div>
                   <div class="searching-lg-3 searching-md-3 searching-sm-4 searching-xs-6">
-                    <input type="number" id="workrequest-maxbatch" name="maxBatch" placeholder="to"> </div>
+                    <input type="number" id="workrequest-maxbatch" name="maxBatch" placeholder="to" required> </div>
                   <div class="searching-lg-3 searching-md-3 searching-sm-4 searching-xs-12">
                     <div class="viewform_title_label" id="unit_label"> Select unit</div>
-                    <select id="workrequest-unit_id" name="unit" data-placeholder="Unit">
+                    <select id="workrequest-unit_id" name="unit" data-placeholder="Unit" required>
                       <option value="gram">gram</option>
                       <option value="item">item</option>
                       <option value="kilogram">kilogram</option>
@@ -100,27 +117,54 @@
               <div class="viewform_description">
                 <div class="viewform_title_label" style="margin-top: 14px;" id="details_required"> Describe in details what you are looking for or what do you want to purchase. Specify the cost and the timing of the request.</div>
                 <div class="input_wrap viewform_description_cont">
-                  <textarea id="workrequestlanguagetranslate-description" class="viewform_description_area" name="description" rows="1" placeholder="Recommended number of characters from 85 to 1000"></textarea>
+                  <textarea id="workrequestlanguagetranslate-description" class="viewform_description_area" name="description" rows="1" placeholder="Recommended number of characters from 85 to 1000" required></textarea>
                   <div>0</div>
                 </div>
-              </div>
-              <div class="viewform_description">
-                <div class="viewform_title_label" style="margin-top: 14px;" id="category_label"> Category</div>
-                <div class="">
-                  <select id="service-category" class="" name="category" >
-                    <%categories.forEach(function(data) {%>
-                      <option value="<%= data.name%>"><%= data.name%></option>
-                    <%})%>
-                  </select>
-                </div>
-              </div>
-              <div class="viewform_button">
-                <button type="submit" id="save" class="btn_submit" data-text="Creating...">Create</button>
               </div>
             </section>
           </div>
         </div>
-        </form>
       </div>
+            <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Next</button>
+          </div>
+        </div>
+      </div>
+      <div class="row setup-content" id="step-2">
+        <div class="col-xs-6 col-md-offset-3">
+          <div class="col-md-12">
+            <div class="row" style="margin: 29px 15px 0px 15px">
+                <div class="searching-lg-12 searching-md-12 searching-sm-12 searching-xs-12" style="border-left: solid 1px #e6ebed;">
+                  <div class="viewform_right">
+                    <section id="viewform_1">
+            <h1>Categories & Hashtags</h1>
+            
+            <div class="viewform_description">
+              <div class="viewform_title_label" style="margin-top: 14px;" id="category_label"> Category</div>
+              <div class="">
+                <select id="service-category" class="" name="category" required>
+                    <option disabled selected>Choose Category</option>
+                  <%categories.forEach(function(data) {%>
+                    <option value="<%= data.name%>"><%= data.name%></option>
+                  <%})%>
+                </select>
+              </div>
+            </div>
+            <div class="viewform_description">
+              <div class="viewform_title_label" style="margin-top: 14px;"> Tags</div>
+              <div class="">
+                <input type="text" value="" data-role="tagsinput" name="tags" id="tags" placeholder="Add tags" />
+              </div>
+            </div>
+            <div class="viewform_button">
+              <button type="submit" id="save" class="btn_submit" data-text="Creating...">Create</button>
+            </div>
+            </section>
+            </div>
+            </div>
+            </div>
+            
+          </div>
+        </div>
+    </form>
   </div>
 </div>

@@ -16,6 +16,7 @@ router.get('/', function(req, res, next) {
         db.collection('users').find({}).toArray((err, users) => {
           db.collection('categories').find({}).toArray((err, categories) => {
             db.collection("sites").find({}).toArray((err, site) => {
+              console.log(requests);
               res.render('index', {
                 title: site[0].title+' - Home',
                 show: 'home',
