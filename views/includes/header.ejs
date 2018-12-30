@@ -11,23 +11,25 @@
     </div>
     <%if(show != 'home'){%>
       <div class="head_search_wrap">
-        <form onsubmit="event.preventDefault(); searchNow(this)" id="query-form" class="head_search search-row__form">
+        <form method="POST" action="/search" class="head_search search-row__form">
           <script>
             var php_in_service = "offers";
             var php_in_request = "requests";
           </script>
           <div class="input_wrap search-row__input" style="position: relative;">
-            <input type="text" id="query-input" name="q" value="" placeholder="What are you searching for?">
+            <input type="text" id="query-input" name="search" value="" placeholder="What are you searching for?">
             <button type="button" class="search-row__selector-button">
-              <span class="search-row__selector-button-text">
-                  offers1
-            </span>
+                <select name="type">
+                    <option value="offers">Offers</option>
+                    <option value="requests">Requests</option>
+                  </select>
             </button>
             <div class="search-row__dropdown">
-              <button type="button" class="search-row__dropdown-button" data-option="services" id="searchOffer">
+              
+              <!-- <button type="button" class="search-row__dropdown-button" data-option="services" name id="searchOffer" value="offers">
                 offers1 </button>
-              <button type="button" class="search-row__dropdown-button" data-option="requests" id="searchRequest">
-                requests1 </button>
+              <button type="button" class="search-row__dropdown-button" data-option="requests" id="searchRequest" value="requests">
+                requests1 </button> -->
             </div>
             <button type="submit" class="filters_search_link">
               <i class="icon icon_search_gray"></i>

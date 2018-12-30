@@ -64,5 +64,21 @@ router.get('/test', (req, res) => {
   res.render('test');
 })
 
+router.post('/search', function(req, res, next) {
+  mongoClient.connect(config.mongodbHost,{ useNewUrlParser: true }, (err, dbConnect) => {
+    var db = dbConnect.db(config.mongodbName);
+    var search = req.body.search;
+    var type = req.body.type;
+    console.log(type);
+    var query = '/^'+search+'/';
+    //console.log(query)
+    db.collection(type).find(query).toArray(function(err, result) {
+      if (err) throw err;
+      console.log(result);
+      
+     });
+  });
+});
+
 
 module.exports = router;
